@@ -12,6 +12,7 @@ rm -rf /tmp/projects
 git worktree add -f /tmp/projects gh-pages
 
 # 建立部署檔到資料夾 dist
+rm -rf dist/
 yarn build
 
 # 刪除舊的舊的部署檔
