@@ -1,6 +1,6 @@
 # projects
 
-demo https://tomleesm.github.io/projects/home/
+demo https://tomleesm.github.io/projects/todo-list/
 
 ## Project setup
 ```
