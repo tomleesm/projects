@@ -19,6 +19,7 @@ yarn build
 rm -rf /tmp/projects/$DIR/* # this won't delete the .git directory
 
 # 複製新的部署檔
+mkdir -p /tmp/projects/$DIR
 cp -rp dist/* /tmp/projects/$DIR
 
 # 提交 commit 到 Git 並 push 到 gh-pages 分支
