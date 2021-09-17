@@ -25,26 +25,26 @@
 import { v1 as uuidv1 } from 'uuid'
 
 export default {
-  data() {
+  data () {
     return {
       taskList: []
     }
   },
   computed: {
-    notDoneTaskList() {
+    notDoneTaskList () {
       return this.taskList.filter((task, index) => {
         return !task.done
       })
     },
-    doneTaskList() {
+    doneTaskList () {
       return this.taskList.filter((task, index) => {
         return task.done
       })
     }
   },
   methods: {
-    addTask() {
-      let newTask = {
+    addTask () {
+      const newTask = {
         id: uuidv1(),
         content: '',
         done: false
