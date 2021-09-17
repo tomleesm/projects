@@ -7,7 +7,7 @@
     <ul class="not done">
       <li v-for="task in notDoneTaskList" :key="task.id">
         <input type="checkbox" v-model="task.done">
-        <input type="text" v-model="task.content" class="content">
+        <input type="text" v-model="task.content" class="content"> <a href="#" @click.stop.prevent="showDeleteConfirm(task.id)">x</a>
       </li>
     </ul>
 
@@ -15,7 +15,8 @@
     <ul class="done">
       <li v-for="task in doneTaskList" :key="task.id">
         <input type="checkbox" v-model="task.done">
-        <label><del>{{ task.content }}</del></label>
+        <label><del>{{ task.content }}</del></label> <a href="#" @click.stop.prevent="showDeleteConfirm(task.id)">x</a>
+
       </li>
     </ul>
   </div>
@@ -57,6 +58,16 @@ export default {
         // 選取 taskList 的第一個元素，並聚焦在其 content 欄位
         document.querySelector('ul.not.done > li > input.content').focus()
       })
+    },
+    showDeleteConfirm (id) {
+      const deleteTask = confirm('Are you sure to delete it ?')
+
+      if (deleteTask) {
+        // 用 id 尋找元素物件的索引值
+        const index = this.taskList.findIndex(t => t.id === id)
+        // 刪除該索引值的元素
+        this.taskList.splice(index, 1)
+      }
     }
   }
 }
