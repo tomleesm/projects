@@ -1,6 +1,6 @@
 <template>
   <h1>Todo List</h1>
-    <p><button type="button" @click="addTask">add task</button></p>
+    <p><button type="button" @click="addTask" class="btn btn-primary">add task</button></p>
 
     <h2>未完成</h2>
     <ul class="not done">
