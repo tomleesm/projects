@@ -1,6 +1,5 @@
 <template>
   <h1>Todo List</h1>
-  <div>
     <p><button type="button" @click="addTask">add task</button></p>
 
     <h2>未完成</h2>
@@ -19,7 +18,6 @@
 
       </li>
     </ul>
-  </div>
 </template>
 
 <script>
