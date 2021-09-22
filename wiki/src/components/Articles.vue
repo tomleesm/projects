@@ -1,5 +1,5 @@
 <template>
-  <Read :title="title" :content="content"></Read>
+  <Read :article="article"></Read>
 </template>
 
 <script>
@@ -18,7 +18,10 @@ export default {
   data () {
     return {
       articles: new Map(),
-      content: ''
+      article: {
+        title: this.title,
+        content: ''
+      }
     }
   },
   beforeRouteEnter (to, from, next) {
@@ -32,7 +35,7 @@ export default {
   methods: {
     setArticleContent (title) {
       if (this.articles.has(title)) {
-        this.content = this.articles.get(title)
+        this.article.content = this.articles.get(title)
       } else {
         this.articles.set(title, '')
       }

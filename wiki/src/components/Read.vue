@@ -1,5 +1,5 @@
 <template>
-  <h1>{{ title }}</h1>
+  <h1>{{ article.title }}</h1>
   <div class="read content" v-html="html">
   </div>
 </template>
@@ -8,7 +8,7 @@
 import MarkdownIt from 'markdown-it'
 
 export default {
-  props: ['title', 'content'],
+  props: ['article'],
   computed: {
     html () {
       const md = new MarkdownIt()
