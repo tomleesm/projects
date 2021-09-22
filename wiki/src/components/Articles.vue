@@ -1,13 +1,14 @@
 <template>
-  <h2>Articles: {{ title }}</h2>
-  <div class="read content" v-html="html">
-  </div>
+  <Read :title="title" :content="content"></Read>
 </template>
 
 <script>
-import MarkdownIt from 'markdown-it'
+import Read from './Read.vue'
 
 export default {
+  components: {
+    Read
+  },
   props: {
     title: {
       type: String,
@@ -27,12 +28,6 @@ export default {
   },
   beforeRouteUpdate (to, from) {
     this.setArticleContent(to.params.title)
-  },
-  computed: {
-    html () {
-      const md = new MarkdownIt()
-      return md.render('# markdown-it working')
-    }
   },
   methods: {
     setArticleContent (title) {
