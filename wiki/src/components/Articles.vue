@@ -1,9 +1,12 @@
 <template>
   <h2>Articles: {{ title }}</h2>
-  <pre>{{ content }}</pre>
+  <div class="read content" v-html="html">
+  </div>
 </template>
 
 <script>
+import MarkdownIt from 'markdown-it'
+
 export default {
   props: {
     title: {
@@ -26,6 +29,10 @@ export default {
     this.setArticleContent(to.params.title)
   },
   computed: {
+    html () {
+      const md = new MarkdownIt()
+      return md.render('# markdown-it working')
+    }
   },
   methods: {
     setArticleContent (title) {
