@@ -18,7 +18,7 @@ import MarkdownIt from 'markdown-it'
 
 export default {
   props: ['article'],
-  emits: ['saveContent'],
+  emits: ['saveContent', 'showRead'],
   computed: {
     html () {
       const md = new MarkdownIt()
@@ -34,9 +34,10 @@ export default {
   methods: {
     saveContent () {
       this.$emit('saveContent', this.content)
+      this.$emit('showRead')
     },
     cancel () {
-      console.log('cancel')
+      this.$emit('showRead')
     }
   }
 }

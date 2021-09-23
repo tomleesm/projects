@@ -1,7 +1,7 @@
 <template>
   <a href="#read" @click.prevent="edit = false">Read</a> | <a href="#edit" @click.prevent="edit = true">Edit</a>
 
-  <Edit v-if="edit" :article="article" @save-content="saveContent"></Edit>
+  <Edit v-if="edit" :article="article" @save-content="saveContent" @show-read="edit = false"></Edit>
   <Read v-else :article="article"></Read>
 </template>
 
