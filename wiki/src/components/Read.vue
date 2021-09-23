@@ -12,7 +12,7 @@ export default {
   computed: {
     html () {
       const md = new MarkdownIt()
-      return md.render('# markdown-it working')
+      return md.render(this.article.content)
     }
   }
 }

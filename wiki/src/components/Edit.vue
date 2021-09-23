@@ -8,6 +8,9 @@
   <div v-else>
     <textarea v-model="content"></textarea>
   </div>
+
+  <button type="button" class="btn btn-primary" @click="saveContent">OK</button>
+  <button type="button" class="btn btn-light" @click="cancel">Cancel</button>
 </template>
 
 <script>
@@ -15,6 +18,7 @@ import MarkdownIt from 'markdown-it'
 
 export default {
   props: ['article'],
+  emits: ['saveContent'],
   computed: {
     html () {
       const md = new MarkdownIt()
@@ -25,6 +29,14 @@ export default {
     return {
       content: this.article.content,
       preview: false
+    }
+  },
+  methods: {
+    saveContent () {
+      this.$emit('saveContent', this.content)
+    },
+    cancel () {
+      console.log('cancel')
     }
   }
 }

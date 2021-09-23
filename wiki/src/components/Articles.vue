@@ -1,7 +1,7 @@
 <template>
   <a href="#read" @click.prevent="edit = false">Read</a> | <a href="#edit" @click.prevent="edit = true">Edit</a>
 
-  <Edit v-if="edit" :article="article"></Edit>
+  <Edit v-if="edit" :article="article" @save-content="saveContent"></Edit>
   <Read v-else :article="article"></Read>
 </template>
 
@@ -44,6 +44,10 @@ export default {
       } else {
         this.articles.set(title, '')
       }
+    },
+    saveContent (content) {
+      this.articles.set(this.article.title, content)
+      this.article.content = content
     }
   }
 }
