@@ -5,13 +5,22 @@
 </template>
 
 <script>
-import MarkdownIt from 'markdown-it'
-
 export default {
   props: ['article'],
   computed: {
     html () {
-      const md = new MarkdownIt()
+      const wikilinks = require('@tomleesm/markdown-it-wikilinks')({
+        makeAllLinksAbsolute: true,
+        baseURL: '/#/articles/',
+        uriSuffix: ''
+      })
+
+      const md = require('markdown-it')({
+        html: false,
+        linkify: true,
+        typographer: true
+      }).use(wikilinks)
+
       return md.render(this.article.content)
     }
   }
