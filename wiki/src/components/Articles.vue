@@ -1,13 +1,17 @@
 <template>
-  <Read :article="article"></Read>
+  <a href="#read" @click.prevent="edit = false">Read</a> | <a href="#edit" @click.prevent="edit = true">Edit</a>
+
+  <Edit v-if="edit" :article="article"></Edit>
+  <Read v-else :article="article"></Read>
 </template>
 
 <script>
 import Read from './Read.vue'
+import Edit from './Edit.vue'
 
 export default {
   components: {
-    Read
+    Read, Edit
   },
   props: {
     title: {
@@ -21,7 +25,8 @@ export default {
       article: {
         title: this.title,
         content: ''
-      }
+      },
+      edit: false
     }
   },
   beforeRouteEnter (to, from, next) {
