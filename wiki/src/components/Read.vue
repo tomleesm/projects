@@ -12,7 +12,10 @@ export default {
       const wikilinks = require('@tomleesm/markdown-it-wikilinks')({
         makeAllLinksAbsolute: true,
         baseURL: '/#/articles/',
-        uriSuffix: ''
+        uriSuffix: '',
+        htmlAttributes: {
+          target: '_blank'
+        }
       })
 
       const md = require('markdown-it')({
