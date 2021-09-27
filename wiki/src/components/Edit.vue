@@ -6,7 +6,7 @@
   <div class="preview" v-if="preview" v-html="html">
   </div>
   <div v-else>
-    <textarea v-model="content"></textarea>
+    <textarea class="form-control" rows="20" v-model="content"></textarea>
   </div>
 
   <button type="button" class="btn btn-primary" @click="saveContent">OK</button>
