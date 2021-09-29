@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Vue test</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ message }}</h1>
+    </div>
+
+    <script src="./node_modules/vue/dist/vue.global.js"></script>
+    <script src="./node_modules/vue-router/dist/vue-router.global.js"></script>
+    <script src="./node_modules/vuex/dist/vuex.global.js"></script>
+    <script type="module">
+      const app = Vue.createApp({
+        data() {
+          return {
+            message: 'Test'
+          }
+        }
+      }).mount('#app')
+    </script>
+  </body>
+</html>
+
