@@ -1,4 +1,4 @@
 <template>
   <h1>Home</h1>
-  <button type="button" class="btn btn-primary">Button</button>
+  <a href="/issues/create" class="btn btn-primary" data-cy="new-issue">New issue</a>
 </template>
