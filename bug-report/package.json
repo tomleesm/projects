@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test": "cypress run --quiet",
-    "doc:make": "cd docs/ && ./doc-make.sh"
+    "doc:make": "cd docs/ && ./doc-make.sh",
+    "doc:serve": "./node_modules/.bin/reload --dir docs/dist/ --port 2345"
   },
   "dependencies": {
     "@popperjs/core": "^2.10.1",
@@ -35,7 +36,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^7.0.0"
+    "eslint-plugin-vue": "^7.0.0",
+    "reload": "^3.2.0"
   },
   "eslintConfig": {
     "root": true,
