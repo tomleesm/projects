@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test": "cypress run --quiet"
+    "test": "cypress run --quiet",
+    "doc:make": "cd docs/ && ./doc-make.sh"
   },
   "dependencies": {
     "@popperjs/core": "^2.10.1",
