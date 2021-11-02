@@ -27,5 +27,3 @@ pnpm-debug.log*
 cypress/videos/
 cypress/screenshots/
 
-# 文件
-/docs/dist/

@@ -7,9 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test": "cypress run --quiet",
-    "doc": "yarn doc:make; yarn doc:serve",
-    "doc:make": "cd docs/ && ./doc-make.sh",
-    "doc:serve": "./node_modules/.bin/reload --dir docs/dist/ --port 2345"
+    "doc": "aglio --input api-doc.md --output api-doc.html --server --host 0.0.0.0 --port 2345"
   },
   "dependencies": {
     "@popperjs/core": "^2.10.1",
@@ -37,8 +35,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^7.0.0",
-    "reload": "^3.2.0"
+    "eslint-plugin-vue": "^7.0.0"
   },
   "eslintConfig": {
     "root": true,
