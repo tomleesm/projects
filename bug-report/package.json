@@ -3,57 +3,36 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "dev": "yarn development",
+    "prod": "yarn production",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "production": "mix --production",
     "test": "cypress run --quiet",
     "doc": "aglio --input api-doc.md --output api-doc.html --server --host 0.0.0.0 --port 2345"
   },
-  "dependencies": {
-    "@popperjs/core": "^2.10.1",
-    "bootstrap": "^5.1.0",
-    "bootstrap-icons": "^1.5.0",
-    "core-js": "^3.6.5",
-    "register-service-worker": "^1.7.1",
-    "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0",
-    "vuex": "^4.0.0-0"
-  },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-pwa": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-plugin-vuex": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
-    "@vue/eslint-config-standard": "^5.1.2",
-    "babel-eslint": "^10.1.0",
+    "axios": "^0.19",
     "cypress": "8.5.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^7.0.0"
+    "eslint": "^8.1.0",
+    "jquery": "^3.2",
+    "laravel-mix": "^6.0.0-beta.17",
+    "lodash": "^4.17.19",
+    "popper.js": "^1.12",
+    "postcss": "^8.3.11",
+    "resolve-url-loader": "^2.3.1",
+    "sass": "^1.20.1",
+    "sass-loader": "^8.0.0"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "@vue/standard"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+  "dependencies": {
+    "@popperjs/core": "^2.10.2",
+    "@vue/cli-plugin-babel": "^4.5.15",
+    "bootstrap": "^5.1.3",
+    "bootstrap-icons": "^1.7.0",
+    "vue": "^3.2.21",
+    "vue-loader": "^16.8.3",
+    "vue-router": "4",
+    "vuex": "^4.0.2"
+  }
 }

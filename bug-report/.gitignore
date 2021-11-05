@@ -1,5 +1,5 @@
 .DS_Store
-node_modules
+/node_modules
 /dist
 
 
@@ -7,6 +7,7 @@ node_modules
 .env
 .env.local
 .env.*.local
+.env.backup
 
 # Log files
 npm-debug.log*
@@ -24,6 +25,14 @@ pnpm-debug.log*
 *.sw?
 
 # cypress
-cypress/videos/
-cypress/screenshots/
+/cypress/videos/
+/cypress/screenshots/
 
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
